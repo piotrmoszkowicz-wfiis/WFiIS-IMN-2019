@@ -26,3 +26,10 @@ void saveResults(const std::string &fileName, double x, double y, double z) {
     file << x << "\t" << y << "\t" << z << std::endl;
     file.close();
 }
+
+void saveResults(const std::string &fileName, double x, double y, double z, double ziet) {
+    std::fstream file;
+    file.open(fileName, std::ios::app);
+    file << x << "\t" << y << "\t" << z << "\t" << ziet << std::endl;
+    file.close();
+}
