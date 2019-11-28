@@ -121,13 +121,13 @@ void relaksacjaGlobalna() {
                 }
             }
 
-            for (int i = 0; i < N_Y - 1; i++) {
+            for (int i = 1; i < N_Y + 1; i++) {
                 n[0][i] = n[1][i];
                 n[N_X][i] = n[N_X - 1][i];
             }
 
-            for (int i = 0; i < N_X - 1; i++) {
-                for (int j = 0; j < N_Y - 1; j++) {
+            for (int i = 0; i < N_X + 1; i++) {
+                for (int j = 0; j < N_Y + 1; j++) {
                     s[i][j] = (1.0 - o) * s[i][j] + o * n[i][j];
                 }
             }
