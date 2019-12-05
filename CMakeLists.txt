@@ -3,7 +3,7 @@ project(imn)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(imn "Lab04/main.cpp" "utils/files_operations.h")
+add_executable(imn "utils/files_operations.h" Lab05/main.cpp)
 
 #include_directories(/usr/local/include)
 include_directories(./utils)
