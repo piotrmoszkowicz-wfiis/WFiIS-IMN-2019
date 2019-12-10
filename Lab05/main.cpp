@@ -92,18 +92,12 @@ int main() {
 
     const double TOL = 1e-8;
 
-    std::vector<int> ks = {
-            16,
-            8,
-            4,
-            2,
-            1
-    };
+    int k = 16;
 
     std::vector<std::vector<double>> V(N_X + 1);
 
     for (int i = 0; i < N_X + 1; i++) {
-        V[i].emplace_back(N_Y + 1);
+        V[i].resize(N_Y + 1);
     }
 
     for (int i = 0; i < N_X +1; i++) {
@@ -122,9 +116,10 @@ int main() {
         V[i][0] = std::sin(2 * M_PI * DELTA * i / MAX_X);
     }
 
-    for (auto k : ks) {
-        std::cout << std::endl << k << std::endl;
+    while (k >= 1) {
         relaksacjaWielosiatkowa(k, V, N_X, N_Y, DELTA, TOL);
+        k /= 2;
     }
+
     return 0;
 }
